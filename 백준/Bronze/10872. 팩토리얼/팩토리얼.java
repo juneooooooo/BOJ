@@ -15,16 +15,11 @@ public class Main {
 		
 		N = sc.nextInt();
 
-		if(N == 0 || N == 1)
-			answer = 1;
-		else
-			answer = factorial(N);
-		
-		System.out.println(answer);
+		System.out.println(factorial(N));
 	}
 	
 	static int factorial(int idx) {
-		if(idx == 1)
+		if(idx <= 1)
 			return 1;
 		
 		return idx * factorial(idx - 1);
