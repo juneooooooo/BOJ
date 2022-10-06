@@ -13,24 +13,12 @@ public class Main {
 		String[] croa = {"c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z="};
 		
 		String s = sc.next();
-		int idx = 0;
-		int answer = 0;
-		while(idx < s.length()) {
-			boolean flag = false;
-			for(int i = 0; i < croa.length; i++) {
-				if(idx + croa[i].length() <= s.length() && s.substring(idx, idx + croa[i].length()).equals(croa[i])) {
-					idx += croa[i].length();
-					flag = true;
-					break;
-				}
-			}
-			
-			if(!flag)
-				idx++;
-			
-			answer++;
+		
+		for(int i = 0; i < croa.length; i++) {
+			s = s.replace(croa[i], "a");
 		}
-		System.out.println(answer);
+		
+		System.out.println(s.length());
 	}
 	
 }
