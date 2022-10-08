@@ -49,21 +49,8 @@ public class Main {
 				comp = (comp == 'B') ? 'W' : 'B';
 			}
 		}
-		min = Math.min(min, cnt);
-		
-		comp = 'B'; // B로 시작하는 경우
-		cnt = 0;
-		for(int row = y; row < y + 8; row++) {
-			comp = (comp == 'B') ? 'W' : 'B';
-			
-			for(int col = x; col < x + 8; col++) {
-				if(comp == arr[row][col]) // 다시 칠해야하는 경우
-					cnt++;
-				
-				comp = (comp == 'B') ? 'W' : 'B';
-			}
-		}
-		min = Math.min(min, cnt);
+		min = Math.min(min, Math.min(cnt,  64 - cnt));
+		// 최대 64개를 다시 칠해야 하고, B시작 = 64 - W시작
 		
 		return;
 	}
