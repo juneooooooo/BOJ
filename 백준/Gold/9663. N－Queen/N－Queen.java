@@ -11,7 +11,7 @@ public class Main {
 		//BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		
 		N = Integer.parseInt(br.readLine());
-		queen = new int[N];
+		queen = new int[N]; // queen[x] = y
 		
 		nQueen(0);
 		
