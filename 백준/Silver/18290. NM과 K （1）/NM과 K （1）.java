@@ -54,16 +54,15 @@ public class Main {
 			max = Math.max(max, sum);
 			return;
 		}
-		else {
-			for(int i = y; i < N; i++) {
-				for(int j = x; j < M; j++) {
-					if(!visited[i][j]) {
-						if(isVisit(i, j)) {
-							visited[i][j] = true;
-							DFS(depth + 1, y, x, sum + map[i][j]);
-							visited[i][j] = false;
-						}	
-					}
+		
+		for(int i = y; i < N; i++) {
+			for(int j = x; j < M; j++) {
+				if(!visited[i][j]) {
+					if(isVisit(i, j)) {
+						visited[i][j] = true;
+						DFS(depth + 1, y, x, sum + map[i][j]);
+						visited[i][j] = false;
+					}	
 				}
 			}
 		}
